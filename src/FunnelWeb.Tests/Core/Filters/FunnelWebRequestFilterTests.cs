@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Web.Mvc;
-using FunnelWeb.Filters;
+using FunnelWeb.Core.Filters;
 using NHibernate;
 using NSubstitute;
 using NUnit.Framework;

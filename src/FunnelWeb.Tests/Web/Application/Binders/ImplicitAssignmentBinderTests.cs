@@ -1,7 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Web;
 using System.Web.Mvc;
-using FunnelWeb.Model.Strings;
+using FunnelWeb.Domain.Model.Strings;
 using FunnelWeb.Tests.Helpers;
 using FunnelWeb.Web.Application.Mvc.Binders;
 using NSubstitute;

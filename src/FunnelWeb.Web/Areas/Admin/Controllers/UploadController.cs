@@ -1,8 +1,7 @@
 ﻿using System.IO;
 using System.Web.Mvc;
-using FunnelWeb.Providers.File;
-using FunnelWeb.Settings;
-using FunnelWeb.Utilities;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Application.Mvc;
 using FunnelWeb.Web.Areas.Admin.Views.Upload;
 

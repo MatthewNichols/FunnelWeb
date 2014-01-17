@@ -1,5 +1,4 @@
-﻿using System;
-using FunnelWeb.Settings;
+﻿using FunnelWeb.Domain.Settings;
 
 namespace FunnelWeb.Web.Application.MetaWeblog
 {

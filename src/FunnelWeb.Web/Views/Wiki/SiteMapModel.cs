@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FunnelWeb.Model;
+using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Views.Wiki
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
+using FunnelWeb.Domain.Dao;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Models;
 
 namespace FunnelWeb.Web.Areas.Admin.Views.Admin

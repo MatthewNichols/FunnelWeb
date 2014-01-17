@@ -23,7 +23,7 @@
     @Html.ValidationSummary("Comment unsuccessful. Please correct the errors below.")
 }
 
-@if (Model.Entry.Status == FunnelWeb.Model.EntryStatus.Private)
+@if (Model.Entry.Status == EntryStatus.Private)
 {
     Html.RenderPartial("_PrivateEntryNotification", Model.Page);
 }

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Dao;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Application.Spam;
 using FunnelWeb.Web.Controllers;
 using FunnelWeb.Web.Views.Wiki;

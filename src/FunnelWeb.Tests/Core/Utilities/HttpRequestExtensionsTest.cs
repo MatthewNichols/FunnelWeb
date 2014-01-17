@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Web;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Utilities;
 using NSubstitute;
 using NUnit.Framework;
 

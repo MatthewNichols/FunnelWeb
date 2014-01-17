@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.Model;
-using FunnelWeb.Model.Repositories;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Tests.Web.Controllers;
 using FunnelWeb.Web.Areas.Admin.Controllers;
 using NSubstitute;

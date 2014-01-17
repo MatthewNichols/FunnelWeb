@@ -1,7 +1,7 @@
 using System;
 using DbUp.Helpers;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Repositories;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+using FunnelWeb.Domain.Interfaces;
 using NHibernate;
 
 namespace FunnelWeb.Tests.Helpers

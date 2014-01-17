@@ -60,13 +60,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FunnelWeb\FunnelWeb.csproj">
-      <Project>{3E448C45-F459-45D7-950C-5ABEF926513D}</Project>
-      <Name>FunnelWeb</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\FunnelWeb.Core\FunnelWeb.Core.csproj">
+      <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>
+      <Name>FunnelWeb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
+      <Project>{E4501600-4D4C-4635-895F-4CF6C0113ADD}</Project>
+      <Name>FunnelWeb.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

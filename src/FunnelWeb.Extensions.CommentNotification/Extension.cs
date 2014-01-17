@@ -1,5 +1,7 @@
 ﻿using Autofac;
-using FunnelWeb.Eventing;
+using FunnelWeb.Domain.Eventing;
+using FunnelWeb.Domain.Extension;
+using FunnelWeb.Domain.Interfaces;
 
 namespace FunnelWeb.Extensions.CommentNotification
 {

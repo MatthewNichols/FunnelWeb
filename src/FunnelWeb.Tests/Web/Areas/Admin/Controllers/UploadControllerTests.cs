@@ -1,10 +1,9 @@
 ﻿using System.IO;
 using System.Web;
 using System.Web.Mvc;
-using FunnelWeb.Providers.File;
-using FunnelWeb.Settings;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Tests.Web.Controllers;
-using FunnelWeb.Utilities;
 using FunnelWeb.Web.Application.Mvc;
 using FunnelWeb.Web.Areas.Admin.Controllers;
 using NSubstitute;

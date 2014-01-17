@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using FunnelWeb.Mvc;
-using FunnelWeb.Web.Application.Mvc;
+using FunnelWeb.Domain.Mvc;
 
 namespace FunnelWeb.Web.Areas.Admin.Views.SqlAuthentication
 {

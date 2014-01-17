@@ -190,13 +190,21 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\FunnelWeb.Core\FunnelWeb.Core.csproj">
+      <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>
+      <Name>FunnelWeb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunnelWeb.DataAccess.Sql\FunnelWeb.DataAccess.Sql.csproj">
+      <Project>{E9B9EC82-F775-4909-B117-F8D91D5463BB}</Project>
+      <Name>FunnelWeb.DataAccess.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
+      <Project>{E4501600-4D4C-4635-895F-4CF6C0113ADD}</Project>
+      <Name>FunnelWeb.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FunnelWeb.Web\FunnelWeb.Web.csproj">
       <Project>{64FAABD6-F45B-4ED1-A3AD-6989C1934405}</Project>
       <Name>FunnelWeb.Web</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FunnelWeb\FunnelWeb.csproj">
-      <Project>{3E448C45-F459-45D7-950C-5ABEF926513D}</Project>
-      <Name>FunnelWeb</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

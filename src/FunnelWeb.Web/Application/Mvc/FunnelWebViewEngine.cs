@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Settings;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Settings;
 
 namespace FunnelWeb.Web.Application.Mvc
 {

@@ -125,8 +125,8 @@
     @Html.LabelFor(m => m.Format)
   </div>
   <div class="editor-field">
-    @Html.RadioButtonFor(m => m.Format, @FunnelWeb.Model.Formats.Markdown) Markdown
-    @Html.RadioButtonFor(m => m.Format, @FunnelWeb.Model.Formats.Html) HTML
+    @Html.RadioButtonFor(m => m.Format, @Formats.Markdown) Markdown
+    @Html.RadioButtonFor(m => m.Format, @Formats.Html) HTML
     @Html.ValidationMessageFor(m => m.Format)
     @Html.HintFor(m => m.Format)
     <span class="hint">You may find <a href="http://milianw.de/projects/markdownify/">Markdownify</a> useful for converting between formats.</span>
@@ -173,9 +173,9 @@
     @Html.LabelFor(m => m.Status)
   </div>
   <div class="editor-field">
-    <div>@Html.RadioButtonFor(m => m.Status, @FunnelWeb.Model.EntryStatus.Private)<abbr title="Only logged in users can see this page">Private</abbr></div>
-    <div>@Html.RadioButtonFor(m => m.Status, @FunnelWeb.Model.EntryStatus.PublicPage)<abbr title="Anyone can see this page, but you'll need to link to it yourself - it won't appear on the home page or in the RSS feed">Public (Page)</abbr></div>
-    <div>@Html.RadioButtonFor(m => m.Status, @FunnelWeb.Model.EntryStatus.PublicBlog)<abbr title="Anyone can see this page, it will appear on the home page and in the RSS feed">Public (Blog Post)</abbr></div>
+    <div>@Html.RadioButtonFor(m => m.Status, @EntryStatus.Private)<abbr title="Only logged in users can see this page">Private</abbr></div>
+    <div>@Html.RadioButtonFor(m => m.Status, @EntryStatus.PublicPage)<abbr title="Anyone can see this page, but you'll need to link to it yourself - it won't appear on the home page or in the RSS feed">Public (Page)</abbr></div>
+    <div>@Html.RadioButtonFor(m => m.Status, @EntryStatus.PublicBlog)<abbr title="Anyone can see this page, it will appear on the home page and in the RSS feed">Public (Blog Post)</abbr></div>
     @Html.ValidationMessageFor(m => m.Format)
   </div>
 

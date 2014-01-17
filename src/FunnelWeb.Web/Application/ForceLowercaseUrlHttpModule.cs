@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Utilities;
 
 namespace FunnelWeb.Web.Application
 {

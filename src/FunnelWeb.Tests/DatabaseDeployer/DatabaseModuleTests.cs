@@ -1,5 +1,6 @@
 ﻿using Autofac;
-using FunnelWeb.DatabaseDeployer;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+using FunnelWeb.Domain.Interfaces;
 using NUnit.Framework;
 
 namespace FunnelWeb.Tests.DatabaseDeployer

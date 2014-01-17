@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
-using FunnelWeb.Filters;
-using FunnelWeb.Model;
-using FunnelWeb.Settings;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Filters;
+using FunnelWeb.Core.Utilities;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Model;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Application.Markup;
 using FunnelWeb.Web.Application.Markup.Macros;
 using FunnelWeb.Web.Application.Mvc.ActionResults;
-using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
 
 namespace FunnelWeb.Web.Controllers
 {

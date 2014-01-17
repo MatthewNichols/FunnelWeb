@@ -1,5 +1,5 @@
-﻿using FunnelWeb.Model;
-using FunnelWeb.Model.Strings;
+﻿using FunnelWeb.Domain.Model;
+using FunnelWeb.Domain.Model.Strings;
 
 namespace FunnelWeb.Web.Views.Wiki
 {

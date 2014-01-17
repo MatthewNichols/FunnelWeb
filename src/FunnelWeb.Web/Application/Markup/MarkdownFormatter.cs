@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Utilities;
 
 namespace FunnelWeb.Web.Application.Markup
 {

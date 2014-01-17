@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using FunnelWeb.Model;
+using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Application.Mvc.Binders
 {

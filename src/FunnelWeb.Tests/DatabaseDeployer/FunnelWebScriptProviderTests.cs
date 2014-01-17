@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using FunnelWeb.DatabaseDeployer;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
 using NSubstitute;
 using NUnit.Framework;
 

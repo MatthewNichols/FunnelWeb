@@ -4,9 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using DbUp.Engine.Output;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Providers;
-using FunnelWeb.Providers.Database;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Web.Areas.Admin.Views.Install;
 
 namespace FunnelWeb.Web.Areas.Admin.Controllers

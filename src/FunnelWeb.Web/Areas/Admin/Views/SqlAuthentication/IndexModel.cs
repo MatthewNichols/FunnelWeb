@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FunnelWeb.Model.Authentication;
+using FunnelWeb.Domain.Model.Authentication;
 
 namespace FunnelWeb.Web.Areas.Admin.Views.SqlAuthentication
 {

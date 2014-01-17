@@ -1,6 +1,7 @@
 ﻿using Autofac;
-using FunnelWeb.Authentication;
-using FunnelWeb.Authentication.Internal;
+using FunnelWeb.DataAccess.Sql.Authentication.Internal;
+using FunnelWeb.Domain.Authentication.Internal;
+using FunnelWeb.Domain.Interfaces;
 
 namespace FunnelWeb.Web.Application.Authentication
 {

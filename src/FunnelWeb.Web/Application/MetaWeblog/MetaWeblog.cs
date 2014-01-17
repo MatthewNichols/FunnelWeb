@@ -4,14 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using CookComputing.XmlRpc;
-using FunnelWeb.Authentication;
-using FunnelWeb.Model;
-﻿using FunnelWeb.Providers.File;
-﻿using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
-using FunnelWeb.Settings;
-using FunnelWeb.Utilities;
-using NHibernate;
+using FunnelWeb.Core.Utilities;
+﻿using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+﻿using FunnelWeb.Domain.Interfaces;
+﻿using FunnelWeb.Domain.Model;
+﻿using FunnelWeb.Domain.Settings;
+﻿using NHibernate;
 
 namespace FunnelWeb.Web.Application.MetaWeblog
 {

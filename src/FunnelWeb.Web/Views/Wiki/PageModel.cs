@@ -1,10 +1,8 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using FunnelWeb.Model;
-using FunnelWeb.Model.Strings;
-using FunnelWeb.Mvc;
+using FunnelWeb.Domain.Model;
+using FunnelWeb.Domain.Model.Strings;
+using FunnelWeb.Domain.Mvc;
 using FunnelWeb.Web.Application.Mvc;
 
 namespace FunnelWeb.Web.Views.Wiki

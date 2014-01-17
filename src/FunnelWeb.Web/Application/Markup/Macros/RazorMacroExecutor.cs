@@ -56,7 +56,7 @@ namespace FunnelWeb.Web.Application.Markup.Macros
             host.NamespaceImports.Add("System.Net");
             host.NamespaceImports.Add("System");
             host.NamespaceImports.Add("System.Web.Routing");
-            host.NamespaceImports.Add("FunnelWeb.Model");
+            host.NamespaceImports.Add("FunnelWeb.Core.Model");
             host.NamespaceImports.Add("FunnelWeb.Web.Application.Extensions");
             host.NamespaceImports.Add("FunnelWeb.Web.Application.Mvc");
 

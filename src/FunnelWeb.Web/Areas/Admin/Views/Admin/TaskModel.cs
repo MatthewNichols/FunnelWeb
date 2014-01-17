@@ -1,4 +1,4 @@
-﻿using FunnelWeb.Model;
+﻿using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Areas.Admin.Views.Admin
 {

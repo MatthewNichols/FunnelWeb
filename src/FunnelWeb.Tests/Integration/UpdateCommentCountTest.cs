@@ -1,6 +1,6 @@
 ﻿using System;
-using FunnelWeb.Model;
-using FunnelWeb.Model.Repositories.Internal;
+using FunnelWeb.DataAccess.Sql.Repositories;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Tests.Helpers;
 using NUnit.Framework;
 

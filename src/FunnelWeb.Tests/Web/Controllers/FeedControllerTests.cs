@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Dao;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Application.Mvc.ActionResults;
 using FunnelWeb.Web.Controllers;
 using NSubstitute;

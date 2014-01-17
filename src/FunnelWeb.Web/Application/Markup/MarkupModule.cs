@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using FunnelWeb.Model;
+using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Application.Markup
 {

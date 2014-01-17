@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Utilities;
+using FunnelWeb.Domain.Interfaces;
 using Microsoft.Win32;
 
 namespace FunnelWeb.Web.Application.Mime

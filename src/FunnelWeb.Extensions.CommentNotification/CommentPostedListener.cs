@@ -5,9 +5,9 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading;
 using System.Web;
-using FunnelWeb.Eventing;
-using FunnelWeb.Model;
-using FunnelWeb.Settings;
+using FunnelWeb.Domain.Eventing;
+using FunnelWeb.Domain.Model;
+using FunnelWeb.Domain.Settings;
 
 namespace FunnelWeb.Extensions.CommentNotification
 {

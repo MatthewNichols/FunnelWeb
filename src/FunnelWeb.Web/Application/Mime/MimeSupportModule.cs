@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using FunnelWeb.Utilities;
+using FunnelWeb.Domain.Interfaces;
 
 namespace FunnelWeb.Web.Application.Mime
 {

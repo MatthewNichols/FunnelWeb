@@ -1,5 +1,5 @@
-@using FunnelWeb.Providers.File
-@model FunnelWeb.Settings.FunnelWebSettings
+@using FunnelWeb.DataAccess.Sql.Providers.File
+@model FunnelWeb.Domain.Settings.FunnelWebSettings
 @{
     ViewBag.Title = "FunnelWeb Administration - Settings";
     Layout = "~/Areas/Admin/Views/Shared/_Private.cshtml";
@@ -156,6 +156,7 @@
         </div>
 
         <script type="text/javascript">
+            // Not happy about this
             @if (Model.StorageProvider == FileRepository.ProviderName)
             {
                 <text>$("#blobStorageSettings").hide();</text>

@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
+﻿using FunnelWeb.Domain.Dao;
+using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Views.Wiki
 {

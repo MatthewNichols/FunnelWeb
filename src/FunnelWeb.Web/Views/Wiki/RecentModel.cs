@@ -1,7 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
+﻿using System.ComponentModel.DataAnnotations;
+using FunnelWeb.Domain.Dao;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Models;
 
 namespace FunnelWeb.Web.Views.Wiki

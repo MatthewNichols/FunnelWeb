@@ -7,9 +7,9 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Application.Spam;
 using NHibernate;
 

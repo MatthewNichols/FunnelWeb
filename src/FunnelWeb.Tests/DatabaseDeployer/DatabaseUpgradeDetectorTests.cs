@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using DbUp.Engine;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Providers.Database;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+using FunnelWeb.Domain.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 

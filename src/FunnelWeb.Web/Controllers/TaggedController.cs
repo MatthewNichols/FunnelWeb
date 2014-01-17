@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using FunnelWeb.Filters;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.Core.Filters;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Controllers
 {

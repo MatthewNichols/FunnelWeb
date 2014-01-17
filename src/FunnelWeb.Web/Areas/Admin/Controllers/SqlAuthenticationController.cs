@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.Authentication.Internal;
-using FunnelWeb.Filters;
-using FunnelWeb.Model.Authentication;
-using FunnelWeb.Settings;
+using FunnelWeb.Core.Filters;
+using FunnelWeb.DataAccess.Sql.Authentication.Internal;
+using FunnelWeb.Domain.Authentication.Internal;
+using FunnelWeb.Domain.Model.Authentication;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Areas.Admin.Views.SqlAuthentication;
 using NHibernate;
 

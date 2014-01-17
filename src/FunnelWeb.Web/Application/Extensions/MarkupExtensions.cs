@@ -9,16 +9,15 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Model;
-using FunnelWeb.Mvc;
-using FunnelWeb.Settings;
-using FunnelWeb.Utilities;
+using FunnelWeb.Core.Utilities;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Model;
+using FunnelWeb.Domain.Mvc;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Application.Markup;
 
 namespace FunnelWeb.Web.Application.Extensions

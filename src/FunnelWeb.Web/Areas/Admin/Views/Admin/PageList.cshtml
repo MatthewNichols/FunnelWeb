@@ -14,15 +14,15 @@
 {
   <h3>@group.Key</h3>
   
-  if (group.Key == FunnelWeb.Model.EntryStatus.Private) 
+    if (group.Key == EntryStatus.Private) 
   {
     <p>Only logged in users can see these pages.</p>
   }
-  else if (group.Key == FunnelWeb.Model.EntryStatus.PublicPage) 
+    else if (group.Key == EntryStatus.PublicPage) 
   {
     <p>Anyone can see these pages, but you'll need to link to them yourself. They won't appear in the main RSS feed.</p>
   }
-  else if (group.Key == FunnelWeb.Model.EntryStatus.PublicBlog) 
+    else if (group.Key == EntryStatus.PublicBlog) 
   {
     <p>Anyone can see these pages, and they will appear in the main RSS feed as well as on the home page.</p>
   }

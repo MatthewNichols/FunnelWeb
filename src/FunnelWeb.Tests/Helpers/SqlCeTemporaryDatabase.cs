@@ -6,12 +6,15 @@ using System.IO;
 using Autofac;
 using DbUp.Engine.Output;
 using DbUp.Helpers;
-using FunnelWeb.DatabaseDeployer;
-using FunnelWeb.Model.Repositories;
-using FunnelWeb.Providers;
-using FunnelWeb.Providers.Database;
-using FunnelWeb.Repositories;
+using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+using FunnelWeb.DataAccess.Sql.Providers;
+using FunnelWeb.DataAccess.Sql.Providers.Database;
+using FunnelWeb.DataAccess.Sql.Repositories;
+using FunnelWeb.Domain.Interfaces;
 using NHibernate;
+//using IApplicationDatabase = FunnelWeb.Core.DatabaseDeployer.IApplicationDatabase;
+//using IConnectionStringSettings = FunnelWeb.Core.DatabaseDeployer.IConnectionStringSettings;
+//using IRepository = FunnelWeb.Core.Repositories.IRepository;
 
 namespace FunnelWeb.Tests.Helpers
 {

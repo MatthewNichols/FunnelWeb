@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using FunnelWeb.Model;
-using FunnelWeb.Repositories.Queries;
+using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Model;
 using FunnelWeb.Tests.Helpers;
 using NUnit.Framework;
 

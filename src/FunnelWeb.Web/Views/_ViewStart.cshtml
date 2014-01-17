@@ -1,4 +1,6 @@
-﻿@{
+﻿@using FunnelWeb.Domain.Model.Strings
+@using FunnelWeb.Domain.Settings
+@{
     var layoutName = "_Public";
     Layout = "~/Views/Shared/" + layoutName + ".cshtml";
     if(Context.IsMobileDevice())
@@ -6,9 +8,9 @@
         layoutName = "_Mobile";
         Layout = "~/Views/Shared/" + layoutName + ".cshtml";
     }
-    
-    var settingsProvider = DependencyResolver.Current.GetService<FunnelWeb.Settings.ISettingsProvider>();
-    var settings = settingsProvider.GetSettings<FunnelWeb.Settings.FunnelWebSettings>();
+
+    var settingsProvider = DependencyResolver.Current.GetService<ISettingsProvider>();
+    var settings = settingsProvider.GetSettings<FunnelWebSettings>();
 
     var locationFormats = new List<string>
                                   {

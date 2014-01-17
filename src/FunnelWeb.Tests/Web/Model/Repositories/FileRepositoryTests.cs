@@ -1,8 +1,7 @@
 ﻿using System.Web;
-using FunnelWeb.Model.Repositories.Internal;
-using FunnelWeb.Providers.File;
-using FunnelWeb.Settings;
-using FunnelWeb.Utilities;
+using FunnelWeb.DataAccess.Sql.Providers.File;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Settings;
 using NSubstitute;
 using NUnit.Framework;
 

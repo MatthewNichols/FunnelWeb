@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using FunnelWeb.Settings;
+using FunnelWeb.Domain.Settings;
 
 namespace FunnelWeb.Web.Controllers
 {

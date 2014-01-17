@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RestorePackages>true</RestorePackages>
+    <ProjectGuid>{E4501600-4D4C-4635-895F-4CF6C0113ADD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FunnelWeb.Domain</RootNamespace>
+    <AssemblyName>FunnelWeb.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc3.2.6.3.862\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="BlogML, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\blogml.2.2.0\lib\BlogML.dll</HintPath>
+    </Reference>
+    <Reference Include="DbUp, Version=2.0.113.12853, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dbup.2.0.113\lib\NET35\DbUp.dll</HintPath>
+    </Reference>
+    <Reference Include="DbUp.SqlCe, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dbup-sqlce.2.0.113\lib\NET35\DbUp.SqlCe.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.3.0.733, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.3.3.2.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.7.0.3\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.1.7.0.0\lib\net35-full\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.0.2\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.Validator.1.3.2.4000\lib\Net35\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator.Specific, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.Validator.1.3.2.4000\lib\Net35\NHibernate.Validator.Specific.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Information\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Information\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Authentication\Internal\FormsAuthenticator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\Internal\FormsFunnelWebMembership.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\Internal\FormsRoleProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\PagedResult.cs" />
+    <Compile Include="Eventing\EventingModule.cs" />
+    <Compile Include="Eventing\INotifier.cs" />
+    <Compile Include="Extension\FunnelWebExtensionAttribute.cs" />
+    <Compile Include="Interfaces\IAdminRepository.cs" />
+    <Compile Include="Interfaces\IApplicationDatabase.cs" />
+    <Compile Include="Interfaces\IAuthenticator.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IConnectionStringSettings.cs" />
+    <Compile Include="Interfaces\IDatabaseProvider.cs" />
+    <Compile Include="Interfaces\IDatabaseUpgradeDetector.cs" />
+    <Compile Include="Interfaces\IFileRepository.cs" />
+    <Compile Include="Interfaces\IFunnelWebExtension.cs" />
+    <Compile Include="Interfaces\IFunnelWebExtensionMetaData.cs" />
+    <Compile Include="Interfaces\IFunnelWebMembership.cs" />
+    <Compile Include="Interfaces\IMimeTypeLookup.cs" />
+    <Compile Include="Interfaces\IPagedQuery.cs" />
+    <Compile Include="Interfaces\IProviderInfo.cs" />
+    <Compile Include="Interfaces\IProviderMetadata.cs" />
+    <Compile Include="Interfaces\IQuery.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRequireDatabaseScripts.cs" />
+    <Compile Include="Interfaces\IRoleProvider.cs" />
+    <Compile Include="Interfaces\IScriptedExtension.cs" />
+    <Compile Include="Interfaces\ITask.cs" />
+    <Compile Include="Interfaces\ITaskExecutor.cs" />
+    <Compile Include="Interfaces\ITaskStateRepository.cs" />
+    <Compile Include="Interfaces\ITaskStep.cs" />
+    <Compile Include="Utilities\StringExtensions.cs" />
+    <Compile Include="Settings\AppHarborSettings.cs" />
+    <Compile Include="Settings\IAppHarborSettings.cs" />
+    <Compile Include="Utilities\HttpRequestExtensions.cs" />
+    <Compile Include="Model\Authentication\Role.cs" />
+    <Compile Include="Model\Authentication\User.cs" />
+    <Compile Include="Model\EntryRevision.cs" />
+    <Compile Include="Model\EntrySummary.cs" />
+    <Compile Include="Model\Strings\EnforcedStringLengthAttribute.cs" />
+    <Compile Include="Mvc\HintSize.cs" />
+    <Compile Include="Mvc\HintSizeAttribute.cs" />
+    <Compile Include="Extension\RoutableFunnelWebExtension.cs" />
+    <Compile Include="Settings\IConfigSettings.cs" />
+    <Compile Include="Settings\ISettings.cs" />
+    <Compile Include="Settings\SettingsModule.cs" />
+    <Compile Include="Settings\SqlAuthenticationSettings.cs" />
+    <Compile Include="Settings\XmlConfigSettings.cs" />
+    <Compile Include="Model\TaskState.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Entry.cs" />
+    <Compile Include="Model\EntryStatus.cs" />
+    <Compile Include="Model\FileItem.cs" />
+    <Compile Include="Model\Formats.cs" />
+    <Compile Include="Model\Pingback.cs" />
+    <Compile Include="Model\Redirect.cs" />
+    <Compile Include="Model\Revision.cs" />
+    <Compile Include="Model\Setting.cs" />
+    <Compile Include="Model\Strings\EnforcedString.cs" />
+    <Compile Include="Model\Strings\PageName.cs" />
+    <Compile Include="Model\TaskStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ConnectionStringSettings.cs" />
+    <Compile Include="Settings\ISettingsProvider.cs" />
+    <Compile Include="Settings\FunnelWebSettings.cs" />
+    <Compile Include="Settings\SettingsProvider.cs" />
+    <Compile Include="Settings\SettingStorageAttribute.cs" />
+    <Compile Include="Settings\StorageLocation.cs" />
+    <Compile Include="Utilities\NumericExtensions.cs" />
+    <Compile Include="Utilities\StreamExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

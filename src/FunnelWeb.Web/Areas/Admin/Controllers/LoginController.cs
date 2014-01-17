@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
-using FunnelWeb.Authentication;
-using FunnelWeb.Settings;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Areas.Admin.Views.Login;
 
 namespace FunnelWeb.Web.Areas.Admin.Controllers

@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using FunnelWeb.Mvc;
+using FunnelWeb.Domain.Mvc;
 
 namespace FunnelWeb.Web.Areas.Admin.Views.Login
 {
