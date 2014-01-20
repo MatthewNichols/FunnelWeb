@@ -440,7 +440,6 @@
     <Content Include="Themes\Twitter\Content\Styles\Theme.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
-    <Content Include="Macros\TwitterStream.cshtml" />
     <Content Include="Views\Shared\_Disqus.cshtml" />
     <Content Include="Views\Shared\_EditComments.cshtml" />
     <Content Include="Views\Shared\_EntryTools.cshtml" />
@@ -538,6 +537,10 @@
     <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
       <Project>{e4501600-4d4c-4635-895f-4cf6c0113add}</Project>
       <Name>FunnelWeb.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunnelWeb.Extensions.CommentNotification\FunnelWeb.Extensions.CommentNotification.csproj">
+      <Project>{5c5efcf0-454d-42e0-aa89-7f69fb5457ba}</Project>
+      <Name>FunnelWeb.Extensions.CommentNotification</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
