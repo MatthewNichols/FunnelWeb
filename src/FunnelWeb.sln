@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnelWeb.Extensions.Commen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnelWeb.DataAccess.Sql", "FunnelWeb.DataAccess.Sql\FunnelWeb.DataAccess.Sql.csproj", "{E9B9EC82-F775-4909-B117-F8D91D5463BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnelWeb.DataAccess.Mongo", "FunnelWeb.DataAccess.Mongo\FunnelWeb.DataAccess.Mongo.csproj", "{CAF5284F-869F-4968-89E4-C19A8D0E88EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{E9B9EC82-F775-4909-B117-F8D91D5463BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9B9EC82-F775-4909-B117-F8D91D5463BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9B9EC82-F775-4909-B117-F8D91D5463BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF5284F-869F-4968-89E4-C19A8D0E88EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF5284F-869F-4968-89E4-C19A8D0E88EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF5284F-869F-4968-89E4-C19A8D0E88EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF5284F-869F-4968-89E4-C19A8D0E88EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
