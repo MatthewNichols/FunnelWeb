@@ -1,28 +1,28 @@
-﻿using Autofac;
-using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
-using FunnelWeb.Domain.Interfaces;
-using NUnit.Framework;
+﻿//using Autofac;
+//using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+//using FunnelWeb.Domain.Interfaces;
+//using NUnit.Framework;
 
-namespace FunnelWeb.Tests.DatabaseDeployer
-{
-    [TestFixture]
-    public class DatabaseModuleTests
-    {
-        private IContainer container;
+//namespace FunnelWeb.Tests.DatabaseDeployer
+//{
+//    [TestFixture]
+//    public class DatabaseModuleTests
+//    {
+//        private IContainer container;
 
-        [SetUp]
-        public void SetUp()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterModule(new DatabaseModule());
-            container = builder.Build();
-        }
+//        [SetUp]
+//        public void SetUp()
+//        {
+//            var builder = new ContainerBuilder();
+//            builder.RegisterModule(new DatabaseModule());
+//            container = builder.Build();
+//        }
 
-        [Test]
-        public void RegistersCorrectTypes()
-        {
-            Assert.IsTrue(container.IsRegistered<IDatabaseUpgradeDetector>());
-            Assert.IsTrue(container.IsRegistered<IApplicationDatabase>());
-        }
-    }
-}
+//        [Test]
+//        public void RegistersCorrectTypes()
+//        {
+//            Assert.IsTrue(container.IsRegistered<IDatabaseUpgradeDetector>());
+//            Assert.IsTrue(container.IsRegistered<IApplicationDatabase>());
+//        }
+//    }
+//}

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web.Mvc;
 using FunnelWeb.Core.Filters;
-using FunnelWeb.DataAccess.Sql.Authentication.Internal;
 using FunnelWeb.Domain.Authentication.Internal;
 using FunnelWeb.Domain.Model.Authentication;
 using FunnelWeb.Domain.Settings;

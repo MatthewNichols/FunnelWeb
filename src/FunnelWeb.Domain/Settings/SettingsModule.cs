@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 
 namespace FunnelWeb.Domain.Settings
 {

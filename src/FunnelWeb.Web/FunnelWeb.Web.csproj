@@ -231,7 +231,6 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\InstallController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SqlAuthenticationController.cs" />
     <Compile Include="Areas\Admin\Controllers\UploadController.cs" />
     <Compile Include="Areas\Admin\Controllers\WikiAdminController.cs" />
     <Compile Include="Areas\Admin\RouteConfig.cs" />
@@ -438,7 +437,9 @@
     <Content Include="Themes\Twitter\Content\Styles\Background.png" />
     <Content Include="Themes\Twitter\Content\Styles\Bar.png" />
     <Content Include="Themes\Twitter\Content\Styles\Theme.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Disqus.cshtml" />
     <Content Include="Views\Shared\_EditComments.cshtml" />
@@ -529,10 +530,6 @@
     <ProjectReference Include="..\FunnelWeb.Core\FunnelWeb.Core.csproj">
       <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>
       <Name>FunnelWeb.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FunnelWeb.DataAccess.Sql\FunnelWeb.DataAccess.Sql.csproj">
-      <Project>{e9b9ec82-f775-4909-b117-f8d91d5463bb}</Project>
-      <Name>FunnelWeb.DataAccess.Sql</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
       <Project>{e4501600-4d4c-4635-895f-4cf6c0113add}</Project>

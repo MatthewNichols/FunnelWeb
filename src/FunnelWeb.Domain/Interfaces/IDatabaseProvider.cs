@@ -20,8 +20,8 @@ namespace FunnelWeb.Domain.Interfaces
         /// <returns></returns>
         bool TryConnect(string connectionString, out string errorMessage);
 
-        IPersistenceConfigurer GetDatabaseConfiguration(IConnectionStringSettings connectionStringSettings);
+        //IPersistenceConfigurer GetDatabaseConfiguration(IConnectionStringSettings connectionStringSettings);
         Func<IDbConnection> GetConnectionFactory(string connectionString);
-        UpgradeEngineBuilder GetUpgradeEngineBuilder(string connectionString, string schema);
+        //UpgradeEngineBuilder GetUpgradeEngineBuilder(string connectionString, string schema);
     }
 }

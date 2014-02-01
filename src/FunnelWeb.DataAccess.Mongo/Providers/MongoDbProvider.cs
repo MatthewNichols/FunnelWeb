@@ -19,19 +19,19 @@ namespace FunnelWeb.DataAccess.Mongo.Providers
             throw new NotImplementedException();
         }
 
-        public IPersistenceConfigurer GetDatabaseConfiguration(IConnectionStringSettings connectionStringSettings)
-        {
-            throw new NotImplementedException();
-        }
+        //public IPersistenceConfigurer GetDatabaseConfiguration(IConnectionStringSettings connectionStringSettings)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public Func<IDbConnection> GetConnectionFactory(string connectionString)
         {
             throw new NotImplementedException();
         }
 
-        public UpgradeEngineBuilder GetUpgradeEngineBuilder(string connectionString, string schema)
-        {
-            throw new NotImplementedException();
-        }
+        //public UpgradeEngineBuilder GetUpgradeEngineBuilder(string connectionString, string schema)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

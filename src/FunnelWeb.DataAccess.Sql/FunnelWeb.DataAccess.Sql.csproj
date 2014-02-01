@@ -132,9 +132,6 @@
     <Compile Include="Providers\Database\Sql\ProfiledSqlDbCommand.cs" />
     <Compile Include="Providers\Database\Sql\ProfiledSqlDbConnection.cs" />
     <Compile Include="Providers\Database\Sql\ProfiledSqlDbTransaction.cs" />
-    <Compile Include="Providers\File\AzureBlobFileRepository.cs" />
-    <Compile Include="Providers\File\FileRepository.cs" />
-    <Compile Include="Providers\File\FileRepositoryBase.cs" />
     <Compile Include="Providers\InternalProviderRegistrationModule.cs" />
     <Compile Include="Providers\ProviderInfo.cs" />
     <Compile Include="Repositories\AdminRepository.cs" />

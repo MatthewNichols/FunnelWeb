@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using DbUp.Engine.Output;
-using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
 using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Web.Areas.Admin.Views.Install;
 
@@ -18,7 +17,7 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
         public IApplicationDatabase Database { get; set; }
         public IConnectionStringSettings ConnectionStringSettings { get; set; }
         public IDatabaseUpgradeDetector UpgradeDetector { get; set; }
-        public IEnumerable<ScriptedExtension> Extensions { get; set; }
+        //public IEnumerable<ScriptedExtension> Extensions { get; set; }
 
         public InstallController(Func<IProviderInfo<IDatabaseProvider>> databaseProvidersInfo)
         {
@@ -50,18 +49,18 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
             if (model.CanConnect)
             {
                 var connectionFactory = databaseProvider.GetConnectionFactory(connectionString);
-                var required = Database
-                    .GetCoreRequiredScripts(connectionFactory)
-                    .Union(Extensions.SelectMany(x => Database.GetExtensionRequiredScripts(connectionFactory, x)))
-                    .ToArray();
+                //var required = Database
+                //    .GetCoreRequiredScripts(connectionFactory)
+                //    .Union(Extensions.SelectMany(x => Database.GetExtensionRequiredScripts(connectionFactory, x)))
+                //    .ToArray();
 
-                var executedAlready = Database
-                    .GetCoreExecutedScripts(connectionFactory)
-                    .Union(Extensions.SelectMany(x => Database.GetExtensionExecutedScripts(connectionFactory, x)))
-                    .ToArray();
+                //var executedAlready = Database
+                //    .GetCoreExecutedScripts(connectionFactory)
+                //    .Union(Extensions.SelectMany(x => Database.GetExtensionExecutedScripts(connectionFactory, x)))
+                //    .ToArray();
 
-                model.ScriptsToRun = required.Except(executedAlready).ToArray();
-                model.IsInstall = executedAlready.Length > 0;
+                //model.ScriptsToRun = required.Except(executedAlready).ToArray();
+                //model.IsInstall = executedAlready.Length > 0;
             }
 
             return View("Index", model);
@@ -95,11 +94,12 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
         public virtual ActionResult Upgrade()
         {
             var writer = new StringWriter();
-            var log = new TextLog(writer);
-            var result = Database.PerformUpgrade(Extensions, log);
-            UpgradeDetector.Reset();
+            //var log = new TextLog(writer);
+            //var result = Database.PerformUpgrade(Extensions, log);
+            //UpgradeDetector.Reset();
             
-            return View("UpgradeReport", new UpgradeModel(result, writer.ToString()));
+            //return View("UpgradeReport", new UpgradeModel(result, writer.ToString()));
+            return View("UpgradeReport", null);
         }
 
         private class TextLog : IUpgradeLog

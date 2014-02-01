@@ -7,13 +7,13 @@ namespace FunnelWeb.Domain.Dao
     {
         private readonly IList<T> results;
 
-        public PagedResult(IList<T> results, int totalCount, int skipped, int itemsPerPage)
+        public PagedResult(IList<T> results, int skipped, int itemsPerPage)
         {
             this.results = results;
-            TotalResults = totalCount;
+//            TotalResults = totalCount;
             ItemsPerPage = itemsPerPage;
             Page = (int) ((decimal) skipped/itemsPerPage);
-            TotalPages = (int) ((decimal) totalCount/ItemsPerPage + 1);
+            TotalPages = (int) ((decimal) results.Count/ItemsPerPage + 1);
         }
 
         public int TotalResults { get; private set; }

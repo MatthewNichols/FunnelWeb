@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Domain.Settings

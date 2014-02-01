@@ -9,10 +9,8 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using FunnelWeb.Core;
+using FunnelWeb.Core.Providers;
 using FunnelWeb.Core.Tasks;
-using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
-using FunnelWeb.DataAccess.Sql.Providers;
-using FunnelWeb.DataAccess.Sql.Repositories;
 using FunnelWeb.Domain.Eventing;
 using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.App_Start;
@@ -46,13 +44,13 @@ namespace FunnelWeb.Web
             builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
 
             // FunnelWeb Database
-            builder.RegisterModule(new DatabaseModule());
+            //builder.RegisterModule(new DatabaseModule());
 
             // FunnelWeb Core
             builder.RegisterModule(new SettingsModule(HostingEnvironment.MapPath("~/My.config")));
             builder.RegisterModule(new TasksModule());
             builder.RegisterModule(new InternalProviderRegistrationModule());
-            builder.RegisterModule(new RepositoriesModule());
+            //builder.RegisterModule(new MongoModule());
             builder.RegisterModule(new EventingModule());
             builder.RegisterModule(new ExtensionsModule(extensionsPath, RouteTable.Routes));
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();

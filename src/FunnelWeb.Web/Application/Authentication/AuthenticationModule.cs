@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using FunnelWeb.DataAccess.Sql.Authentication.Internal;
+//using FunnelWeb.DataAccess.Sql.Authentication.Internal;
 using FunnelWeb.Domain.Authentication.Internal;
 using FunnelWeb.Domain.Interfaces;
 
@@ -21,11 +21,11 @@ namespace FunnelWeb.Web.Application.Authentication
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
-            builder
-                .RegisterType<SqlAuthenticator>()
-                .As<IAuthenticator>()
-                .AsSelf()
-                .InstancePerLifetimeScope();
+            //builder
+            //    .RegisterType<SqlAuthenticator>()
+            //    .As<IAuthenticator>()
+            //    .AsSelf()
+            //    .InstancePerLifetimeScope();
             
             //Role Providers
             builder.RegisterType<FormsRoleProvider>()
@@ -33,11 +33,11 @@ namespace FunnelWeb.Web.Application.Authentication
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
-            builder
-                .RegisterType<SqlRoleProvider>()
-                .As<IRoleProvider>()
-                .AsSelf()
-                .InstancePerLifetimeScope();
+            //builder
+            //    .RegisterType<SqlRoleProvider>()
+            //    .As<IRoleProvider>()
+            //    .AsSelf()
+            //    .InstancePerLifetimeScope();
 
             //Membership
             builder
@@ -46,11 +46,11 @@ namespace FunnelWeb.Web.Application.Authentication
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
-            builder
-                .RegisterType<SqlFunnelWebMembership>()
-                .As<IFunnelWebMembership>()
-                .AsSelf()
-                .InstancePerLifetimeScope();
+            //builder
+            //    .RegisterType<SqlFunnelWebMembership>()
+            //    .As<IFunnelWebMembership>()
+            //    .AsSelf()
+            //    .InstancePerLifetimeScope();
         }
     }
 }

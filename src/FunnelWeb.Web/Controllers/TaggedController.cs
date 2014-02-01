@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using FunnelWeb.Core.Filters;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Controllers
@@ -9,16 +9,16 @@ namespace FunnelWeb.Web.Controllers
     [FunnelWebRequest]
     public class TaggedController : Controller
     {
-        private readonly IRepository repository;
+        private readonly IEntrySummaryRepository entityRepository;
 
-        public TaggedController(IRepository repository)
+        public TaggedController(IEntrySummaryRepository entityRepository)
         {
-            this.repository = repository;
+            this.entityRepository = entityRepository;
         }
 
         public ActionResult Index(string tag)
         {
-            var tagItems = repository.Find(new GetEntriesByTagQuery(tag, EntryStatus.PublicBlog), 0, 30);
+            var tagItems = entityRepository.GetByTag(tag); //.Find(new GetEntriesByTagQuery(tag, EntryStatus.PublicBlog), 0, 30);
             ViewBag.Tag = tag;
             return View(tagItems);
         }

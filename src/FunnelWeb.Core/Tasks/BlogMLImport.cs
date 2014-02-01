@@ -5,20 +5,23 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using BlogML;
 using BlogML.Xml;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+//using FunnelWeb.DataAccess.Sql.Repositories.Queries;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Core.Tasks
 {
     public class BlogMLImportTask : ITask
     {
-        private readonly IRepository repository;
+        private readonly IEntryRepository entryRepository;
+        private readonly ITagRepository tagRepository;
         private readonly IAuthenticator authenticator;
 
-        public BlogMLImportTask(IRepository repository, IAuthenticator authenticator)
+        public BlogMLImportTask(IEntryRepository entryRepository, ITagRepository tagRepository, IAuthenticator authenticator)
         {
-            this.repository = repository;
+            this.entryRepository = entryRepository;
+            this.tagRepository = tagRepository;
             this.authenticator = authenticator;
         }
 
@@ -63,7 +66,7 @@ namespace FunnelWeb.Core.Tasks
                     entry.Name = NoLongerThan(100, (post.PostUrl ?? post.PostName ?? post.ID).Trim('/'));
 
                     // Ensure this post wasn't already imported
-                    var existing = repository.FindFirstOrDefault(new EntryByNameQuery(entry.Name));
+                    var existing = entryRepository.GetByName(entry.Name);
                     if (existing != null)
                     {
                         yield return new TaskStep(progress, "Did NOT import post '{0}', because a post by this name already exists", entry.Name);
@@ -103,17 +106,18 @@ namespace FunnelWeb.Core.Tasks
                         if (string.IsNullOrEmpty(tagName))
                             continue;
 
-                        var existingTag = repository.FindFirstOrDefault(new SearchTagsByNameQuery(tagName));
+                        //var existingTag = entryRepository.FindFirstOrDefault(new SearchTagsByNameQuery(tagName));
+                        var existingTag = tagRepository.GetByName(tagName);
                         if (existingTag == null)
                         {
                             existingTag = new Tag {Name = tagName};
-                            repository.Add(existingTag);
+                            entryRepository.Add(existingTag);
                         }
 
                         existingTag.Add(entry);
                     }
 
-                    repository.Add(entry);
+                    entryRepository.Add(entry);
 
                     yield return new TaskStep(progress, "Imported post '{0}'", entry.Name);
                 }

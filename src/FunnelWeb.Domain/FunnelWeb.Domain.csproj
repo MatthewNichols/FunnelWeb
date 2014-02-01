@@ -120,18 +120,17 @@
     <Compile Include="Authentication\Internal\FormsRoleProvider.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Dao\EntriesSortColumn.cs" />
     <Compile Include="Dao\PagedResult.cs" />
     <Compile Include="Eventing\EventingModule.cs" />
     <Compile Include="Eventing\INotifier.cs" />
     <Compile Include="Extension\FunnelWebExtensionAttribute.cs" />
-    <Compile Include="Interfaces\IAdminRepository.cs" />
     <Compile Include="Interfaces\IApplicationDatabase.cs" />
     <Compile Include="Interfaces\IAuthenticator.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IConnectionStringSettings.cs" />
     <Compile Include="Interfaces\IDatabaseProvider.cs" />
     <Compile Include="Interfaces\IDatabaseUpgradeDetector.cs" />
-    <Compile Include="Interfaces\IFileRepository.cs" />
     <Compile Include="Interfaces\IFunnelWebExtension.cs" />
     <Compile Include="Interfaces\IFunnelWebExtensionMetaData.cs" />
     <Compile Include="Interfaces\IFunnelWebMembership.cs" />
@@ -140,7 +139,6 @@
     <Compile Include="Interfaces\IProviderInfo.cs" />
     <Compile Include="Interfaces\IProviderMetadata.cs" />
     <Compile Include="Interfaces\IQuery.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRequireDatabaseScripts.cs" />
     <Compile Include="Interfaces\IRoleProvider.cs" />
     <Compile Include="Interfaces\IScriptedExtension.cs" />
@@ -148,6 +146,15 @@
     <Compile Include="Interfaces\ITaskExecutor.cs" />
     <Compile Include="Interfaces\ITaskStateRepository.cs" />
     <Compile Include="Interfaces\ITaskStep.cs" />
+    <Compile Include="Interfaces\Repositories\IAdminRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICommentRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPingbackRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEntryRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEntryRevisionRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEntrySummaryRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFileRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITagRepository.cs" />
     <Compile Include="Utilities\StringExtensions.cs" />
     <Compile Include="Settings\AppHarborSettings.cs" />
     <Compile Include="Settings\IAppHarborSettings.cs" />

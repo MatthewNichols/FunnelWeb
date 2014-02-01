@@ -145,20 +145,6 @@
     <Compile Include="Helpers\QueryIntegrationTest.cs" />
     <Compile Include="Helpers\SqlCeIntegrationTest.cs" />
     <Compile Include="Helpers\SqlCeTemporaryDatabase.cs" />
-    <Compile Include="Integration\Queries\GetEntriesQueryCanReturnAllStatuses.cs" />
-    <Compile Include="Integration\Queries\GetEntriesQueryDoesNotReturnPrivate.cs" />
-    <Compile Include="Integration\Queries\SearchEntriesQueryDoesNotReturnPrivate.cs" />
-    <Compile Include="Integration\Queries\EntryByNameAndRevisionQueryLoadsSpecifiedRevisionAsLatest.cs" />
-    <Compile Include="Integration\Queries\EntryByNameAndRevisionQueryMatchesEntryByName.cs" />
-    <Compile Include="Integration\Queries\EntryByNameQueryMatchesEntryByName.cs" />
-    <Compile Include="Integration\Queries\EntryByNameQueryMatchesEntryByNameThatHasComments.cs" />
-    <Compile Include="Integration\Queries\GetCommentsQueryReturnsComments.cs" />
-    <Compile Include="Integration\Queries\GetEntriesQueryByTagReturnsEntryWithWithRequestedTagOnly.cs" />
-    <Compile Include="Integration\Queries\GetEntriesQueryReturnsEntry.cs" />
-    <Compile Include="Integration\Queries\GetEntriesQueryReturnsEntryWithTags.cs" />
-    <Compile Include="Integration\Queries\GetFullEntriesQueryReturnsEntriesWithComments.cs" />
-    <Compile Include="Integration\Queries\SearchEntriesQueryTests.cs" />
-    <Compile Include="Integration\Queries\SearchTagsByNameQueryReturnsTag.cs" />
     <Compile Include="Core\Repositories\FileRepositoryTests.cs" />
     <Compile Include="DatabaseDeployer\DatabaseModuleTests.cs" />
     <Compile Include="DatabaseDeployer\DatabaseUpgradeDetectorTests.cs" />
@@ -194,9 +180,9 @@
       <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>
       <Name>FunnelWeb.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FunnelWeb.DataAccess.Sql\FunnelWeb.DataAccess.Sql.csproj">
-      <Project>{E9B9EC82-F775-4909-B117-F8D91D5463BB}</Project>
-      <Name>FunnelWeb.DataAccess.Sql</Name>
+    <ProjectReference Include="..\FunnelWeb.DataAccess.Mongo\FunnelWeb.DataAccess.Mongo.csproj">
+      <Project>{cb71fca9-ea6a-4132-8985-a7df39e6b3f1}</Project>
+      <Name>FunnelWeb.DataAccess.Mongo</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
       <Project>{E4501600-4D4C-4635-895F-4CF6C0113ADD}</Project>

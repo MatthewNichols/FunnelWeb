@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web.Mvc;
 using FunnelWeb.Core.Filters;
 using FunnelWeb.Core.Tasks;
-using FunnelWeb.DataAccess.Sql.Repositories;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+//using FunnelWeb.DataAccess.Sql.Repositories;
+//using FunnelWeb.DataAccess.Sql.Repositories.Queries;
+using FunnelWeb.Domain.Dao;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Application.Mvc;
@@ -24,7 +26,9 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
         public IAdminRepository AdminRepository { get; set; }
         public ISettingsProvider SettingsProvider { get; set; }
         public IThemeProvider ThemeProvider { get; set; }
-        public IRepository Repository { get; set; }
+        public ICommentRepository CommentRepository { get; set; }
+        public IEntrySummaryRepository EntrySummaryRepository { get; set; }
+        public IPingbackRepository PingbackRepository { get; set; }
         public ITaskStateRepository TaskRepository { get; set; }
         public ISession DatabaseSession { get; set; }
         public ITaskExecutor<BlogMLImportTask> ImportTask { get; set; }
@@ -66,33 +70,39 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
         {
             var page = pageNumber ?? 0;
 
-            var comments = Repository.Find(new GetAllCommentsQuery(), page, 20);
+            var results = CommentRepository.GetQueryable(); // .Find(new GetAllCommentsQuery(), page, 20);
+            var comments = new PagedResult<Comment>(results.ToList(), 0, 0);
             return View(new CommentsModel(page, comments));
         }
 
         public virtual ActionResult DeleteComment(int id)
         {
-            var item = Repository.Get<Comment>(id);
-            Repository.Remove(item);
+            var item = CommentRepository.Get(id);
+            CommentRepository.Remove(item);
+            
             AdminRepository.UpdateCommentCountFor(item.Entry.Id);
             return RedirectToAction("Comments", "Admin");
         }
 
         public virtual ActionResult DeleteAllSpam()
         {
-            var comments = Repository.Find(new GetSpamQuery()).ToList();
+            var comments = CommentRepository.GetSpam().ToList();
             foreach (var comment in comments)
-                Repository.Remove(comment);
+            {
+                CommentRepository.Remove(comment);
+            }
+
             foreach (var entryToUpdate in comments.Select(c=>c.Entry.Id).GroupBy(id=>id))
             {
                 AdminRepository.UpdateCommentCountFor(entryToUpdate.Key);
             }
+
             return RedirectToAction("Comments", "Admin");
         }
 
         public virtual ActionResult ToggleSpam(int id)
         {
-            var item = Repository.Get<Comment>(id);
+            var item = CommentRepository.Get(id);
             if (item != null)
             {
                 item.IsSpam = !item.IsSpam;
@@ -107,20 +117,21 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
 
         public virtual ActionResult Pingbacks()
         {
-            var pingbacks = Repository.FindAll<Pingback>();
+            var pingbacks = PingbackRepository.FindAll();
             return View(new PingbacksModel(pingbacks));
         }
 
         public virtual ActionResult DeletePingback(int id)
         {
-            var item = Repository.Get<Pingback>(id);
-            Repository.Remove(item);
+            //var item = Repository.Get<Pingback>(id);
+            var item = PingbackRepository.Get(id);
+            PingbackRepository.Remove(item);
             return RedirectToAction("Pingbacks", "Admin");
         }
 
         public virtual ActionResult TogglePingbackSpam(int id)
         {
-            var item = Repository.Get<Pingback>(id);
+            var item = PingbackRepository.Get(id);
             if (item != null)
             {
                 item.IsSpam = !item.IsSpam;
@@ -177,7 +188,8 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
             if (sort == null)
                 sort = EntriesSortColumn.Slug;
 
-            var entries = Repository.Find(new GetEntriesQuery(EntryStatus.All, sort.Value, asc ?? true), 0, 500);
+            //var entries = EntrySummaryRepository.Find(new GetEntriesQuery(EntryStatus.All, sort.Value, asc ?? true), 0, 500);
+            var entries = EntrySummaryRepository.FindAll();
 
             return View(new PageListModel(entries) { SortAscending = asc.GetValueOrDefault() });
         }

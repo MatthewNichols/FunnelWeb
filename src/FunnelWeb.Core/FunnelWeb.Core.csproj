@@ -114,6 +114,11 @@
     <Compile Include="ExtensionsModule.cs" />
     <Compile Include="Filters\FunnelWebRequestAttribute.cs" />
     <Compile Include="FunnelWebExtensionLoadException.asax.cs" />
+    <Compile Include="Providers\File\AzureBlobFileRepository.cs" />
+    <Compile Include="Providers\File\FileRepository.cs" />
+    <Compile Include="Providers\File\FileRepositoryBase.cs" />
+    <Compile Include="Providers\InternalProviderRegistrationModule.cs" />
+    <Compile Include="Providers\ProviderInfo.cs" />
     <Compile Include="Utilities\HttpRequestExtensions.cs" />
     <Compile Include="Tasks\TaskModule.cs" />
     <Compile Include="Tasks\BlogMLImport.cs" />
@@ -130,15 +135,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FunnelWeb.DataAccess.Sql\FunnelWeb.DataAccess.Sql.csproj">
-      <Project>{e9b9ec82-f775-4909-b117-f8d91d5463bb}</Project>
-      <Name>FunnelWeb.DataAccess.Sql</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
       <Project>{e4501600-4d4c-4635-895f-4cf6c0113add}</Project>
       <Name>FunnelWeb.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>

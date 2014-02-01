@@ -7,8 +7,8 @@ using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using FunnelWeb.Core.Filters;
 using FunnelWeb.Core.Utilities;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.Application.Markup;
@@ -20,7 +20,8 @@ namespace FunnelWeb.Web.Controllers
     [FunnelWebRequest]
     public class FeedController : Controller
     {
-        public IRepository Repository { get; set; }
+        public IEntryRevisionRepository EntryRevisionRepository { get; set; }
+        public ICommentRepository CommentRepository { get; set; }
         public IContentRenderer Renderer { get; set; }
         public ISettingsProvider Settings { get; set; }
 
@@ -55,7 +56,8 @@ namespace FunnelWeb.Web.Controllers
         {
             var settings = Settings.GetSettings<FunnelWebSettings>();
 
-            var entries = Repository.Find(new GetFullEntriesQuery(entryStatus: EntryStatus.PublicBlog), 0, 20);
+            //var entries = EntryRevisionRepository.Find(new GetFullEntriesQuery(entryStatus: EntryStatus.PublicBlog), 0, 20);
+            var entries = EntryRevisionRepository.GetFullEntries(entryStatus: EntryStatus.PublicBlog);
 
             var baseUri = Request.GetOriginalUrl();
 
@@ -121,7 +123,8 @@ namespace FunnelWeb.Web.Controllers
 
         public virtual ActionResult CommentFeed()
         {
-            var comments = Repository.Find(new GetCommentsQuery(), 0, 20);
+            //var comments = EntryRevisionRepository.Find(new GetCommentsQuery(), 0, 20);
+            var comments = CommentRepository.FindAll();
 
             var baseUri = Request.GetOriginalUrl();
             var items =

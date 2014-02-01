@@ -5,8 +5,8 @@ using System.Linq;
 using System.Web;
 using CookComputing.XmlRpc;
 using FunnelWeb.Core.Utilities;
-﻿using FunnelWeb.DataAccess.Sql.Repositories.Queries;
 ﻿using FunnelWeb.Domain.Interfaces;
+﻿using FunnelWeb.Domain.Interfaces.Repositories;
 ﻿using FunnelWeb.Domain.Model;
 ﻿using FunnelWeb.Domain.Settings;
 ﻿using NHibernate;
@@ -17,21 +17,27 @@ namespace FunnelWeb.Web.Application.MetaWeblog
     {
         private readonly FunnelWebSettings funnelWebSettings;
         private readonly ISettingsProvider settingsProvider;
-        private readonly IRepository repository;
-        private readonly ISession session;
+        private readonly IEntryRepository entryRepository;
+        private readonly IEntryRevisionRepository entryRevisionRepository;
+        private readonly ITagRepository tagRepository;
+        //private readonly ISession session;
         private readonly IFileRepository fileRepository;
         private readonly IAuthenticator authenticator;
 
         public MetaWeblog(
             ISettingsProvider settingsProvider,
-            IRepository repository,
-            ISession session,
+            IEntryRepository entryRepository,
+            IEntryRevisionRepository entryRevisionRepository,
+            ITagRepository tagRepository,
+            //ISession session,
             IFileRepository fileRepository,
             IAuthenticator authenticator)
         {
             this.settingsProvider = settingsProvider;
-            this.repository = repository;
-            this.session = session;
+            this.entryRepository = entryRepository;
+            this.entryRevisionRepository = entryRevisionRepository;
+            this.tagRepository = tagRepository;
+            //this.session = session;
             this.fileRepository = fileRepository;
             this.authenticator = authenticator;
             funnelWebSettings = this.settingsProvider.GetSettings<FunnelWebSettings>();
@@ -57,11 +63,11 @@ namespace FunnelWeb.Web.Application.MetaWeblog
         {
             if (ValidateUser(username, password))
             {
-                using (var transaction = session.BeginTransaction(IsolationLevel.Serializable))
-                {
+                //using (var transaction = session.BeginTransaction(IsolationLevel.Serializable))
+                //{
                     var isOldPost = true;
                     var author = authenticator.GetName();
-                    var entry = repository.Get<Entry>(Int32.Parse(postid));
+                    var entry = entryRepository.Get(Int32.Parse(postid));
 
                     if (entry == null)
                     {
@@ -99,11 +105,12 @@ namespace FunnelWeb.Web.Application.MetaWeblog
                         tag.Remove(entry);
                     foreach (var tag in toAdd)
                     {
-                        var existingTag = repository.FindFirstOrDefault(new SearchTagsByNameQuery(tag));
+                        //var existingTag = entryRepository.FindFirstOrDefault(new SearchTagsByNameQuery(tag));
+                        var existingTag = tagRepository.GetByName(tag);
                         if (existingTag == null)
                         {
                             existingTag = new Tag { Name = tag };
-                            repository.Add(existingTag);
+                            tagRepository.Add(existingTag);
                         }
                         existingTag.Add(entry);
                     }
@@ -111,14 +118,14 @@ namespace FunnelWeb.Web.Application.MetaWeblog
                     //Does it need to be added?
                     if (!isOldPost)
                     {
-                        repository.Add(entry);
+                        entryRepository.Add(entry);
                     }
 
-                    session.Flush();
-                    transaction.Commit();
+                    //session.Flush();
+                    //transaction.Commit();
 
                     return entry;
-                }
+                //}
             }
             return null;
         }
@@ -127,7 +134,7 @@ namespace FunnelWeb.Web.Application.MetaWeblog
         {
             if (ValidateUser(username, password))
             {
-                var entry = repository.Get<Entry>(Int32.Parse(postid));
+                var entry = entryRepository.Get(Int32.Parse(postid));
 
                 return entry != null ? ConvertToPost(entry) : new Post();
             }
@@ -140,7 +147,7 @@ namespace FunnelWeb.Web.Application.MetaWeblog
             {
                 //TODO implement a tagged rss feed, and update url
 
-                return repository.FindAll<Tag>()
+                return tagRepository.FindAll()
                     .Select(t => new CategoryInfo
                     {
                         categoryid = t.Id.ToString(),
@@ -160,7 +167,7 @@ namespace FunnelWeb.Web.Application.MetaWeblog
         {
             if (ValidateUser(username, password))
             {
-                var entries = repository.Find(new GetFullEntriesQuery(), 0, numberOfPosts)
+                var entries = entryRevisionRepository.GetFullEntries().Take(numberOfPosts) //.Find(new GetFullEntriesQuery(), 0, numberOfPosts)
                     .Select(ConvertToPost)
                     .ToArray();
 
@@ -226,13 +233,13 @@ namespace FunnelWeb.Web.Application.MetaWeblog
         {
             if (ValidateUser(username, password))
             {
-                using (var transaction = session.BeginTransaction(IsolationLevel.Serializable))
-                {
-                    repository.Remove(repository.Get<Entry>(Int32.Parse(postid)));
+                //using (var transaction = session.BeginTransaction(IsolationLevel.Serializable))
+                //{
+                    entryRepository.Remove(entryRepository.Get(Int32.Parse(postid)));
 
-                    session.Flush();
-                    transaction.Commit();
-                }
+                    //session.Flush();
+                    //transaction.Commit();
+                //}
                 return true;
             }
             throw new XmlRpcFaultException(0, "User is not valid!");

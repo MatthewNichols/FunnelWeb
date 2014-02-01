@@ -7,8 +7,8 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
 using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 using FunnelWeb.Web.Application.Spam;
 using NHibernate;
@@ -36,13 +36,13 @@ namespace FunnelWeb.Web.Application.Pingbacks
             }
 
             var session = DependencyResolver.Current.GetService<ISession>();
-            var repository = DependencyResolver.Current.GetService<IRepository>();
+            var entryRevisionRepository = DependencyResolver.Current.GetService<IEntryRevisionRepository>();
             var spamChecker = DependencyResolver.Current.GetService<ISpamChecker>();
             var transaction = session.BeginTransaction(IsolationLevel.Serializable);
             try
             {
                 // Ensure the link is for a page that exists
-                var entry = repository.FindFirstOrDefault(new EntryByNameQuery(pageName));
+                var entry = entryRevisionRepository.GetByName(pageName);
                 if (entry == null)
                 {
                     throw new XmlRpcFaultException(32, "The targetURI refers to a page that does not exist.");

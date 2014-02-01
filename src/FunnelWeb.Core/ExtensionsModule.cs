@@ -6,7 +6,7 @@ using System.IO;
 using System.Web.Routing;
 using Autofac;
 using DbUp.ScriptProviders;
-using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
+//using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
 using FunnelWeb.Domain.Extension;
 using FunnelWeb.Domain.Interfaces;
 
@@ -44,17 +44,17 @@ namespace FunnelWeb.Core
                 var controller = extension as RoutableFunnelWebExtension;
                 var requiresScripts = extension as IRequireDatabaseScripts;
 
-                if (requiresScripts != null)
-                {
-                    var ex = new ScriptedExtension(
-                        requiresScripts.SourceIdentifier,
-                        extension.GetType().Assembly,
-                        new EmbeddedScriptProvider(
-                            extension.GetType().Assembly,
-                            script => script.EndsWith(".sql")));
+                //if (requiresScripts != null)
+                //{
+                //    var ex = new ScriptedExtension(
+                //        requiresScripts.SourceIdentifier,
+                //        extension.GetType().Assembly,
+                //        new EmbeddedScriptProvider(
+                //            extension.GetType().Assembly,
+                //            script => script.EndsWith(".sql")));
 
-                    builder.RegisterInstance(ex);
-                }
+                //    builder.RegisterInstance(ex);
+                //}
 
                 if (controller != null)
                 {

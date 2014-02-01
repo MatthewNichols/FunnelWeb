@@ -1,37 +1,36 @@
-﻿using System;
-using FunnelWeb.DataAccess.Sql.Repositories.Queries;
-using FunnelWeb.Domain.Model;
-using FunnelWeb.Tests.Helpers;
-using NUnit.Framework;
+﻿//using System;
+//using FunnelWeb.Domain.Model;
+//using FunnelWeb.Tests.Helpers;
+//using NUnit.Framework;
 
-namespace FunnelWeb.Tests.Integration.Queries
-{
-    [TestFixture]
-    public class SearchTagsByNameQueryReturnsTag : QueryIntegrationTest
-    {
-        public SearchTagsByNameQueryReturnsTag()
-            : base(TheDatabase.CanBeDirty)
-        {
-        }
+//namespace FunnelWeb.Tests.Integration.Queries
+//{
+//    [TestFixture]
+//    public class SearchTagsByNameQueryReturnsTag : QueryIntegrationTest
+//    {
+//        public SearchTagsByNameQueryReturnsTag()
+//            : base(TheDatabase.CanBeDirty)
+//        {
+//        }
 
-        public override void TestQuery()
-        {
-            var name = Guid.NewGuid().ToString();
+//        public override void TestQuery()
+//        {
+//            var name = Guid.NewGuid().ToString();
 
-            Database.WithRepository(
-                repo =>
-                {
-                    var tag = new Tag { Name = name };
-                    repo.Add(tag);
-                });
+//            Database.WithRepository(
+//                repo =>
+//                {
+//                    var tag = new Tag { Name = name };
+//                    repo.Add(tag);
+//                });
 
-            Database.WithRepository(
-                repo =>
-                {
-                    var result = repo.FindFirstOrDefault(new SearchTagsByNameQuery(name));
-                    Assert.NotNull(result);
-                    Assert.AreEqual(name, result.Name);
-                });
-        }
-    }
-}
+//            Database.WithRepository(
+//                repo =>
+//                {
+//                    var result = repo.FindFirstOrDefault(new SearchTagsByNameQuery(name));
+//                    Assert.NotNull(result);
+//                    Assert.AreEqual(name, result.Name);
+//                });
+//        }
+//    }
+//}
