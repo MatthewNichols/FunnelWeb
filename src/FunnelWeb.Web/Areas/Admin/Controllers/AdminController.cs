@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.Core.Filters;
+//using FunnelWeb.Core.Filters;
 using FunnelWeb.Core.Tasks;
 //using FunnelWeb.DataAccess.Sql.Repositories;
 //using FunnelWeb.DataAccess.Sql.Repositories.Queries;
@@ -18,7 +18,7 @@ using NHibernate;
 
 namespace FunnelWeb.Web.Areas.Admin.Controllers
 {
-    [FunnelWebRequest]
+    //[FunnelWebRequest]
     [ValidateInput(false)]
     [Authorize(Roles="Admin")]
     public class AdminController : Controller

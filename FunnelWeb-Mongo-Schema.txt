@@ -1,0 +1,24 @@
+FunnelWeb-Mongo Schema
+
+Collections: Indented indicates embedded
+Sites
+	Url
+	Settings
+	Users
+	Tags (master list?)
+	Redirects
+
+Entries
+	Tags
+	
+Revisions
+
+Comments
+
+Pingbacks
+
+
+Not represented
+Roles are referenced as text in User and have an enum in code.
+TaskState is not currently supported
+SchemaVersion is not currently supported

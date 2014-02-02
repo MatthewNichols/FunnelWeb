@@ -45,14 +45,13 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Configuration">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\packages\Autofac.Mvc4.2.6.2.859\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="CookComputing.XmlRpcServerV2">
       <HintPath>..\packages\xmlrpcnet-server.3.0.0.266\lib\net20\CookComputing.XmlRpcServerV2.dll</HintPath>
@@ -530,6 +529,10 @@
     <ProjectReference Include="..\FunnelWeb.Core\FunnelWeb.Core.csproj">
       <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>
       <Name>FunnelWeb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunnelWeb.DataAccess.Mongo\FunnelWeb.DataAccess.Mongo.csproj">
+      <Project>{cb71fca9-ea6a-4132-8985-a7df39e6b3f1}</Project>
+      <Name>FunnelWeb.DataAccess.Mongo</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunnelWeb.Domain\FunnelWeb.Domain.csproj">
       <Project>{e4501600-4d4c-4635-895f-4cf6c0113add}</Project>

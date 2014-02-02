@@ -4,7 +4,7 @@ using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Domain.Interfaces.Repositories
 {
-    public interface IAdminRepository
+    public interface IAdminRepository: IRepository<Setting>
     {
         IQueryable<Setting> GetSettings();
 

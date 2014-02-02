@@ -35,11 +35,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Configuration">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="DbUp, Version=2.0.113.12853, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -138,7 +136,6 @@
     <Compile Include="..\Information\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Core\Filters\FunnelWebRequestFilterTests.cs" />
     <Compile Include="Core\Utilities\HttpRequestExtensionsTest.cs" />
     <Compile Include="DatabaseDeployer\FunnelWebScriptProviderTests.cs" />
     <Compile Include="Helpers\ITemporaryDatabase.cs" />
@@ -174,7 +171,9 @@
     <Compile Include="Web\Model\Strings\PageNameTests.cs" />
     <Compile Include="Web\RoutingTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\Filters\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FunnelWeb.Core\FunnelWeb.Core.csproj">
       <Project>{1bb2af73-5f06-4e9a-be85-2e92a47ebab5}</Project>

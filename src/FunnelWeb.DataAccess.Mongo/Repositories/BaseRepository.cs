@@ -12,6 +12,8 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
+        public ISiteContext SiteContext { get; set; }
+
         #region Implementation of IRepository
 
         public TEntity Get(object id)

@@ -1,12 +1,12 @@
 ﻿using System.Web.Mvc;
-using FunnelWeb.Core.Filters;
+//using FunnelWeb.Core.Filters;
 using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 
 namespace FunnelWeb.Web.Controllers
 {
-    [FunnelWebRequest]
+    //[FunnelWebRequest]
     public class TaggedController : Controller
     {
         private readonly IEntrySummaryRepository entityRepository;

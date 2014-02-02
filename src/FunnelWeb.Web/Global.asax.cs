@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
+using FunnelWeb.DataAccess.Mongo;
 using FunnelWeb.Core;
 using FunnelWeb.Core.Providers;
 using FunnelWeb.Core.Tasks;
@@ -50,7 +51,7 @@ namespace FunnelWeb.Web
             builder.RegisterModule(new SettingsModule(HostingEnvironment.MapPath("~/My.config")));
             builder.RegisterModule(new TasksModule());
             builder.RegisterModule(new InternalProviderRegistrationModule());
-            //builder.RegisterModule(new MongoModule());
+            builder.RegisterModule(new MongoModule());
             builder.RegisterModule(new EventingModule());
             builder.RegisterModule(new ExtensionsModule(extensionsPath, RouteTable.Routes));
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();

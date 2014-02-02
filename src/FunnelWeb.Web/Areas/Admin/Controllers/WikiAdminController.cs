@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.Core.Filters;
+//using FunnelWeb.Core.Filters;
 using FunnelWeb.Domain.Eventing;
 using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Domain.Interfaces.Repositories;
@@ -16,7 +16,7 @@ using FunnelWeb.Web.Application.Spam;
 
 namespace FunnelWeb.Web.Areas.Admin.Controllers
 {
-    [FunnelWebRequest]
+    //[FunnelWebRequest]
     [HandleError]
     [ValidateInput(false)]
     public class WikiAdminController : Controller

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using FunnelWeb.Core.Filters;
+//using FunnelWeb.Core.Filters;
 using FunnelWeb.Domain.Dao;
 using FunnelWeb.Domain.Eventing;
 using FunnelWeb.Domain.Interfaces;
@@ -16,7 +16,7 @@ using FunnelWeb.Web.Views.Wiki;
 
 namespace FunnelWeb.Web.Controllers
 {
-    [FunnelWebRequest]
+    //[FunnelWebRequest]
     [HandleError]
     [ValidateInput(false)]
     public class WikiController : Controller

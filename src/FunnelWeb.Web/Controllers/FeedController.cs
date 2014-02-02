@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
-using FunnelWeb.Core.Filters;
+//using FunnelWeb.Core.Filters;
 using FunnelWeb.Core.Utilities;
 using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Domain.Interfaces.Repositories;
@@ -17,7 +17,7 @@ using FunnelWeb.Web.Application.Mvc.ActionResults;
 
 namespace FunnelWeb.Web.Controllers
 {
-    [FunnelWebRequest]
+    //[FunnelWebRequest]
     public class FeedController : Controller
     {
         public IEntryRevisionRepository EntryRevisionRepository { get; set; }
