@@ -11,14 +11,26 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class EntryRepository : BaseRepository<Entry>, IEntryRepository
     {
+        #region Constructors
+
+        public EntryRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
+
         public Entry GetByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Entry> GetQueryable()
+        //public IQueryable<Entry> GetQueryable()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public override string DefaultCollectionName
         {
-            throw new NotImplementedException();
+            get { return "Entries"; }
         }
     }
 }

@@ -11,6 +11,13 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class EntryRevisionRepository : BaseRepository<EntryRevision>, IEntryRevisionRepository
     {
+        #region Constructors
+
+        public EntryRevisionRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
+
         public EntryRevision GetByName(string pageName)
         {
             throw new NotImplementedException();
@@ -34,6 +41,11 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         public EntryRevision GetEntryWithPingbacks(string pageName)
         {
             throw new NotImplementedException();
+        }
+
+        public override string DefaultCollectionName
+        {
+            get { return "EntityRevisions"; }
         }
     }
 }

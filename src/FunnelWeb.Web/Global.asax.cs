@@ -13,6 +13,7 @@ using FunnelWeb.Core;
 using FunnelWeb.Core.Providers;
 using FunnelWeb.Core.Tasks;
 using FunnelWeb.Domain.Eventing;
+using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Domain.Settings;
 using FunnelWeb.Web.App_Start;
 using FunnelWeb.Web.Application;
@@ -46,12 +47,12 @@ namespace FunnelWeb.Web
 
             // FunnelWeb Database
             //builder.RegisterModule(new DatabaseModule());
+            builder.RegisterModule(new MongoModule());
 
             // FunnelWeb Core
             builder.RegisterModule(new SettingsModule(HostingEnvironment.MapPath("~/My.config")));
             builder.RegisterModule(new TasksModule());
             builder.RegisterModule(new InternalProviderRegistrationModule());
-            builder.RegisterModule(new MongoModule());
             builder.RegisterModule(new EventingModule());
             builder.RegisterModule(new ExtensionsModule(extensionsPath, RouteTable.Routes));
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
@@ -104,6 +105,12 @@ namespace FunnelWeb.Web
         protected void Application_EndRequest()
         {
             MiniProfiler.Stop();
+        }
+
+        protected void Session_Start()
+        {
+            var siteIdSetter = DependencyResolver.Current.GetService<ISiteIdSetter>();
+            siteIdSetter.Execute();
         }
     }
 }

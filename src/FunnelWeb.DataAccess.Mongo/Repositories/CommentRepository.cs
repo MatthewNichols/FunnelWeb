@@ -6,6 +6,14 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class CommentRepository : BaseRepository<Comment>, ICommentRepository
     {
+
+        #region Constructors
+
+        public CommentRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
+
         #region Implementation of ICommentRepository
 
         public IEnumerable<Comment> GetSpam()
@@ -14,5 +22,10 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         }
 
         #endregion
+
+        public override string DefaultCollectionName
+        {
+            get { return "Comments"; }
+        }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System.Web;
 using Autofac;
+using Autofac.Integration.Mvc;
+using FunnelWeb.Domain.Interfaces;
+using FunnelWeb.Domain.Mvc;
 
 namespace FunnelWeb.Web.Application.Mvc
 {
@@ -8,6 +11,9 @@ namespace FunnelWeb.Web.Application.Mvc
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
+
+            builder.RegisterType<SiteIdSetter>()
+                .As<ISiteIdSetter>().InstancePerHttpRequest();
 
             builder.Register<HttpContextBase>(x => new HttpContextWrapper(HttpContext.Current))
                 .InstancePerLifetimeScope();

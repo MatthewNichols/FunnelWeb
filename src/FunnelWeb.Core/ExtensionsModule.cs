@@ -5,8 +5,6 @@ using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Web.Routing;
 using Autofac;
-using DbUp.ScriptProviders;
-//using FunnelWeb.DataAccess.Sql.DatabaseDeployer;
 using FunnelWeb.Domain.Extension;
 using FunnelWeb.Domain.Interfaces;
 

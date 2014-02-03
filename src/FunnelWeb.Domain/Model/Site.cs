@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FunnelWeb.Domain.Model
 {
-    public class Site
+    public class Site : AggregateRoot
     {
         /// <summary>
         /// The Host name of the site being viewed.

@@ -6,6 +6,13 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class EntrySummaryRepository : BaseRepository<EntrySummary>, IEntrySummaryRepository
     {
+        #region Constructors
+
+        public EntrySummaryRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
+
         #region Implementation of IEntrySummaryRepository
 
         public IList<EntrySummary> GetByTag(string name)
@@ -19,5 +26,10 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         }
 
         #endregion
+
+        public override string DefaultCollectionName
+        {
+            get { return "Entries"; }
+        }
     }
 }

@@ -10,9 +10,16 @@ using FunnelWeb.Domain.Interfaces.Repositories;
 
 namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class BaseRepository<TEntity> : MongoBase<TEntity>, IRepository<TEntity> where TEntity : class
     {
         public ISiteContext SiteContext { get; set; }
+
+        #region Constructors
+
+        protected BaseRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
 
         #region Implementation of IRepository
 

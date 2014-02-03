@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using config = System.Configuration.ConfigurationManager;
 using Autofac;
 using Autofac.Integration.Mvc;
 using FunnelWeb.DataAccess.Mongo.Repositories;
@@ -16,15 +12,43 @@ namespace FunnelWeb.DataAccess.Mongo
     {
         protected override void Load(ContainerBuilder builder)
         {
+            var connectionString = config.ConnectionStrings["funnelWebMongo"].ConnectionString;
 
-            builder.RegisterType<SiteContext>().As<ISiteContext>().InstancePerHttpRequest();
-            builder.RegisterType<AdminRepository>().As<IAdminRepository>().InstancePerHttpRequest();
-            builder.RegisterType<CommentRepository>().As<ICommentRepository>().InstancePerHttpRequest();
-            builder.RegisterType<EntryRepository>().As<IEntryRepository>().InstancePerHttpRequest();
-            builder.RegisterType<EntryRevisionRepository>().As<IEntryRevisionRepository>().InstancePerHttpRequest();
-            builder.RegisterType<EntrySummaryRepository>().As<IEntrySummaryRepository>().InstancePerHttpRequest();
-            builder.RegisterType<PingbackRepository>().As<IPingbackRepository>().InstancePerHttpRequest();
-            builder.RegisterType<TagRepository>().As<ITagRepository>().InstancePerHttpRequest();
+            builder.RegisterType<SiteContext>()
+                .As<ISiteContext>().InstancePerHttpRequest();
+
+            builder.RegisterType<AdminRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<IAdminRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<SiteRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<ISiteRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<CommentRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<ICommentRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<EntryRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<IEntryRepository>().InstancePerHttpRequest();
+
+            builder.RegisterType<EntryRevisionRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<IEntryRevisionRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<EntrySummaryRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<IEntrySummaryRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<PingbackRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<IPingbackRepository>().InstancePerHttpRequest();
+            
+            builder.RegisterType<TagRepository>()
+                .WithParameter("connectionString", connectionString)
+                .As<ITagRepository>().InstancePerHttpRequest();
+
             //builder.RegisterType<TaskStateRepository>().As<ITaskStateRepository>().InstancePerLifetimeScope();
 
             //builder.RegisterType<NHibernateRepository>().As<IRepository>().InstancePerLifetimeScope();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using DbUp.Engine.Output;
 using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Web.Areas.Admin.Views.Install;
 
@@ -99,32 +98,33 @@ namespace FunnelWeb.Web.Areas.Admin.Controllers
             //UpgradeDetector.Reset();
             
             //return View("UpgradeReport", new UpgradeModel(result, writer.ToString()));
-            return View("UpgradeReport", null);
+            //return View("UpgradeReport", null);
+            return null;
         }
 
-        private class TextLog : IUpgradeLog
-        {
-            private readonly StringWriter writer;
+        //private class TextLog : IUpgradeLog
+        //{
+        //    private readonly StringWriter writer;
 
-            public TextLog(StringWriter writer)
-            {
-                this.writer = writer;
-            }
+        //    public TextLog(StringWriter writer)
+        //    {
+        //        this.writer = writer;
+        //    }
 
-            public void WriteInformation(string format, params object[] args)
-            {
-                writer.WriteLine("INFO:  " + string.Format(format, args));
-            }
+        //    public void WriteInformation(string format, params object[] args)
+        //    {
+        //        writer.WriteLine("INFO:  " + string.Format(format, args));
+        //    }
 
-            public void WriteError(string format, params object[] args)
-            {
-                writer.WriteLine("ERROR: " + string.Format(format, args));
-            }
+        //    public void WriteError(string format, params object[] args)
+        //    {
+        //        writer.WriteLine("ERROR: " + string.Format(format, args));
+        //    }
 
-            public void WriteWarning(string format, params object[] args)
-            {
-                writer.WriteLine("WARN:  " + string.Format(format, args));
-            }
-        }
+        //    public void WriteWarning(string format, params object[] args)
+        //    {
+        //        writer.WriteLine("WARN:  " + string.Format(format, args));
+        //    }
+        //}
     }
 }

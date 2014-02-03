@@ -6,6 +6,8 @@ namespace FunnelWeb.Domain.Model
 {
     public class SiteContext : ISiteContext
     {
+        private string hostName;
+
         #region Implementation of ISiteContext
 
         public ObjectId SiteId
@@ -19,8 +21,22 @@ namespace FunnelWeb.Domain.Model
                     return (ObjectId) siteId;
                 }
 
-                return new ObjectId();
+                return ObjectId.Empty;
             }
+        }
+
+        public string HostName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(hostName))
+                {
+                    var httpContext = HttpContext.Current;
+                    hostName = httpContext.Request.UserHostName;
+                }
+
+                return hostName;
+            } 
         }
 
         /// <summary>

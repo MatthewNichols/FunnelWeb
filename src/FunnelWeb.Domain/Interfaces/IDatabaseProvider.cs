@@ -1,6 +1,6 @@
 using System;
 using System.Data;
-using DbUp.Builder;
+//using DbUp.Builder;
 using FluentNHibernate.Cfg.Db;
 
 namespace FunnelWeb.Domain.Interfaces

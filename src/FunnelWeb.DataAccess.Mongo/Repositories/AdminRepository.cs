@@ -7,6 +7,13 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class AdminRepository : BaseRepository<Setting>, IAdminRepository
     {
+        #region Constructors
+
+        public AdminRepository(string connectionString) : base(connectionString)
+        {}
+
+        #endregion
+
         #region Implementation of IAdminRepository
 
         public IQueryable<Setting> GetSettings()
@@ -25,5 +32,10 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         }
 
         #endregion
+
+        public override string DefaultCollectionName
+        {
+            get { return "Sites"; }
+        }
     }
 }

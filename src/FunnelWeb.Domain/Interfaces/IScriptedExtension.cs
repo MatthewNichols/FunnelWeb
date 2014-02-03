@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using DbUp.Engine;
+//using DbUp.Engine;
 
 namespace FunnelWeb.Domain.Interfaces
 {
@@ -7,6 +7,6 @@ namespace FunnelWeb.Domain.Interfaces
     {
         Assembly SourceAssembly { get; }
         string SourceIdentifier { get; }
-        IScriptProvider ScriptProvider { get; }
+        //IScriptProvider ScriptProvider { get; }
     }
 }

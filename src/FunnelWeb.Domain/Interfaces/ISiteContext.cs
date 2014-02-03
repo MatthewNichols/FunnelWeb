@@ -9,6 +9,7 @@ namespace FunnelWeb.Domain.Interfaces
     public interface ISiteContext
     {
         ObjectId SiteId { get; }
+        string HostName { get; }
         void StoreSiteId(ObjectId siteId);
     }
 }
