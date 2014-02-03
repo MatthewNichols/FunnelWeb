@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FunnelWeb.Domain.Model;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
@@ -26,6 +28,11 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         }
 
         #endregion
+
+        protected IQueryable<TEntity> QueryableCollection
+        {
+            get { return collection.AsQueryable(); }
+        }
 
         public abstract string DefaultCollectionName { get; }
 

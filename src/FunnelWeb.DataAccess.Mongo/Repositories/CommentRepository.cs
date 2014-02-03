@@ -6,7 +6,6 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class CommentRepository : BaseRepository<Comment>, ICommentRepository
     {
-
         #region Constructors
 
         public CommentRepository(string connectionString) : base(connectionString)

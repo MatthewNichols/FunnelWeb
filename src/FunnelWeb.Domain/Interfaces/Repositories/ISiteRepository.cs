@@ -11,5 +11,6 @@ namespace FunnelWeb.Domain.Interfaces.Repositories
     {
         Site GetByHostName(string hostName);
         ObjectId GetSiteIdByHostName(string hostName);
+        Site Save(Site site);
     }
 }
