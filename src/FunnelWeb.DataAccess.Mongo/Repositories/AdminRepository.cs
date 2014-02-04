@@ -7,10 +7,14 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public class AdminRepository : BaseRepository<Setting>, IAdminRepository
     {
+        private readonly ISiteRepository siteRepository;
+
         #region Constructors
 
-        public AdminRepository(string connectionString) : base(connectionString)
-        {}
+        public AdminRepository(string connectionString, ISiteRepository siteRepository) : base(connectionString)
+        {
+            this.siteRepository = siteRepository;
+        }
 
         #endregion
 
@@ -18,7 +22,9 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 
         public IQueryable<Setting> GetSettings()
         {
-            throw new System.NotImplementedException();
+            var siteId = this.SiteContext.SiteId;
+            var site = siteRepository.Get(siteId);
+            return site.Settings.AsQueryable();
         }
 
         public void Save(IEnumerable<Setting> settings)

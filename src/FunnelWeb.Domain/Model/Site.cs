@@ -12,5 +12,9 @@ namespace FunnelWeb.Domain.Model
         /// </summary>
         /// <example>The blog http://www.bill.com/blog would have a HostName of www.bill.com</example>
         public string HostName { get; set; }
+
+        public List<Setting> Settings { get; set; }
+
+
     }
 }

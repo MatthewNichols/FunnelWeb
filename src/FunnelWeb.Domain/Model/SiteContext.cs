@@ -32,7 +32,7 @@ namespace FunnelWeb.Domain.Model
                 if (string.IsNullOrEmpty(hostName))
                 {
                     var httpContext = HttpContext.Current;
-                    hostName = httpContext.Request.UserHostName;
+                    hostName = httpContext.Request.Url.Host;
                 }
 
                 return hostName;

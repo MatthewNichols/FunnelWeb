@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FunnelWeb.Domain.Interfaces;
 using FunnelWeb.Domain.Model;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
@@ -13,12 +14,13 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
         #region Member Vars and constants
 
         protected readonly MongoCollection<TEntity> collection;
+        public ISiteContext SiteContext { get; set; }
 
         #endregion
 
         #region Constructors
 
-        public MongoBase(string connectionString)
+        protected MongoBase(string connectionString)
         {
             var mongoUrl = new MongoUrl(connectionString);
             var client = new MongoClient(mongoUrl);

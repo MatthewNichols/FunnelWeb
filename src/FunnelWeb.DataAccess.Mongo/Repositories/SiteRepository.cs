@@ -31,6 +31,11 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
             return site == null ? ObjectId.Empty : site.Id;
         }
 
+        public Site Get(ObjectId id)
+        {
+            return QueryableCollection.SingleOrDefault(s => s.Id == id);
+        }
+
         public Site Save(Site site)
         {
             collection.Save(site);

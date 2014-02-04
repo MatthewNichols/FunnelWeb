@@ -12,7 +12,7 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 {
     public abstract class BaseRepository<TEntity> : MongoBase<TEntity>, IRepository<TEntity> where TEntity : class
     {
-        public ISiteContext SiteContext { get; set; }
+        //public ISiteContext SiteContext { get; set; }
 
         #region Constructors
 
