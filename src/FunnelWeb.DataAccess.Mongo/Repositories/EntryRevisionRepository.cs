@@ -20,7 +20,8 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 
         public EntryRevision GetByName(string pageName)
         {
-            throw new NotImplementedException();
+            pageName = pageName.ToLower();
+            return QueryableCollection.SingleOrDefault(e => e.Name == pageName.Trim().ToLower());
         }
 
         public EntryRevision GetByNameAndRevision(string pageName, int revision)

@@ -19,6 +19,7 @@ namespace FunnelWeb.DataAccess.Mongo
 
             builder.RegisterType<AdminRepository>()
                 .WithParameter("connectionString", connectionString)
+                .PropertiesAutowired()
                 .As<IAdminRepository>().InstancePerHttpRequest();
             
             builder.RegisterType<SiteRepository>()

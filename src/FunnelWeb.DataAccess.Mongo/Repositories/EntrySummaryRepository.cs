@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using FunnelWeb.Domain.Interfaces.Repositories;
 using FunnelWeb.Domain.Model;
 
@@ -22,7 +23,8 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
 
         public IList<EntrySummary> GetByStatus(string statusName)
         {
-            throw new System.NotImplementedException();
+            statusName = statusName.ToLower();
+            return QueryableCollection.Where(e => e.Status.ToLower() == statusName).ToList();
         }
 
         #endregion

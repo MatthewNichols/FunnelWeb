@@ -18,13 +18,13 @@ namespace FunnelWeb.Web.Application.Mvc
 
         private RazorViewEngine CreateRealViewEngine()
         {
-            var database = DependencyResolver.Current.GetService<IDatabaseUpgradeDetector>();
-            if (database.UpdateNeeded())
-            {
-                // If the database is offline, we don't have settings support (since they are stored in the database)
-                // so we'll use the out-of-the-box razor engine
-                return fallbackViewEngine;
-            }
+            //var database = DependencyResolver.Current.GetService<IDatabaseUpgradeDetector>();
+            //if (database.UpdateNeeded())
+            //{
+            //    // If the database is offline, we don't have settings support (since they are stored in the database)
+            //    // so we'll use the out-of-the-box razor engine
+            //    return fallbackViewEngine;
+            //}
 
             lock (@lock)
             {

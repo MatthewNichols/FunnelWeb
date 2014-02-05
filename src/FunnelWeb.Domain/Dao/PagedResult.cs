@@ -11,8 +11,8 @@ namespace FunnelWeb.Domain.Dao
         {
             this.results = results;
 //            TotalResults = totalCount;
-            ItemsPerPage = itemsPerPage;
-            Page = (int) ((decimal) skipped/itemsPerPage);
+            ItemsPerPage = itemsPerPage == 0 ? 10 : itemsPerPage;
+            Page = (int) ((decimal) skipped/ItemsPerPage);
             TotalPages = (int) ((decimal) results.Count/ItemsPerPage + 1);
         }
 

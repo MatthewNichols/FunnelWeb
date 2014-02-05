@@ -257,8 +257,8 @@ namespace FunnelWeb.Web.Application.Extensions
             var settingsProvider = DependencyResolver.Current.GetService<ISettingsProvider>();
 
             // A database upgrade is required, lets just use the default settings
-            if (DependencyResolver.Current.GetService<IDatabaseUpgradeDetector>().UpdateNeeded())
-                return settingsProvider.GetDefaultSettings<FunnelWebSettings>();
+            //if (DependencyResolver.Current.GetService<IDatabaseUpgradeDetector>().UpdateNeeded())
+            //    return settingsProvider.GetDefaultSettings<FunnelWebSettings>();
 
             return settingsProvider.GetSettings<FunnelWebSettings>();
         }

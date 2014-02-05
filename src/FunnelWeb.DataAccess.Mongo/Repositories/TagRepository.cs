@@ -12,15 +12,22 @@ namespace FunnelWeb.DataAccess.Mongo.Repositories
     //This needs to be restructured
     public class TagRepository : BaseRepository<Tag>, ITagRepository
     {
+        private readonly ISiteRepository siteRepository;
+
         #region Constructors
 
-        public TagRepository(string connectionString) : base(connectionString)
+        public TagRepository(string connectionString, ISiteRepository siteRepository) : base(connectionString)
         {
+            this.siteRepository = siteRepository;
             throw new NotImplementedException();
         }
 
         #endregion
 
+        public IEnumerable<Tag> FindAll()
+        {
+            return siteRepository.Get(SiteContext.SiteId).Tags;
+        }
 
         public Tag GetByName(string name)
         {
